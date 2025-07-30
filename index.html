@@ -330,42 +330,42 @@
             <!-- Project 3: Professional Development -->
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-title">Teacher Professional Development</div>
-                    <div class="project-subtitle">Hands-On Workshop Design | Adult Learning Implementation</div>
+                    <div class="project-title">Technical Education Professional Development</div>
+                    <div class="project-subtitle">Industry Partnership Program | Adult Learning Implementation</div>
                 </div>
                 <div class="project-content">
                     <div class="metrics">
                         <div class="metric">
-                            <span class="metric-number">12</span>
-                            <span class="metric-label">Educators Trained</span>
+                            <span class="metric-number">2-3</span>
+                            <span class="metric-label">Weeks</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-number">30+</span>
-                            <span class="metric-label">Lesson Plans Created</span>
+                            <span class="metric-number">12</span>
+                            <span class="metric-label">Educators Trained</span>
                         </div>
                     </div>
 
                     <div class="challenge">
                         <div class="section-title">Challenge</div>
-                        <p>High school teachers with no computer science background needed to confidently lead coding exercises and troubleshoot student questions. Traditional PD often fails to bridge theory-to-practice gap.</p>
+                        <p>High school teachers with no technical background needed to confidently teach cybersecurity, IT support, and computer networking concepts. Traditional professional development often fails to connect technical theory with real-world applications.</p>
                     </div>
 
                     <div class="solution">
                         <div class="section-title">Solution</div>
-                        <p>Designed experiential learning model: teachers experienced each lesson as students first, then debriefed instructional strategies as educators. Combined hands-on practice with systematic curriculum design principles.</p>
+                        <p>Designed experiential learning program featuring industry partnerships with Google, Federal Reserve Bank of NY, and other organizations. Teachers experienced technical concepts in real workplace environments, then learned to adapt these experiences for classroom instruction.</p>
                     </div>
 
                     <div class="impact">
                         <div class="section-title">Impact</div>
-                        <p>Within one week, novice teachers gained confidence to lead coding exercises independently. Created sustainable curriculum implementation process for underserved communities, ensuring quality computer science education access.</p>
+                        <p>Over 2-3 weeks, transformed 12 educators with no technical background into confident instructors. Created 30+ lesson plans connecting cybersecurity, IT, and networking concepts to career pathways in underserved communities.</p>
                     </div>
 
                     <div class="tags">
                         <span class="tag">Professional Development</span>
-                        <span class="tag">Workshop Facilitation</span>
-                        <span class="tag">Curriculum Implementation</span>
+                        <span class="tag">Industry Partnerships</span>
+                        <span class="tag">Technical Education</span>
                         <span class="tag">Adult Learning Theory</span>
-                        <span class="tag">Community Impact</span>
+                        <span class="tag">Career Pathways</span>
                     </div>
 
                     <button class="view-details">View Full Case Study</button>
@@ -430,11 +430,18 @@
     </div>
 
     <script>
-        // Add smooth scrolling and interaction effects
-        document.querySelectorAll('.view-details').forEach(button => {
+        // Add case study links
+        document.querySelectorAll('.view-details').forEach((button, index) => {
             button.addEventListener('click', function() {
-                // In a real portfolio, this would link to detailed case studies
-                alert('This would link to a detailed case study page with process documentation, deliverables, and detailed impact metrics.');
+                const caseStudyUrls = [
+                    'phishing-case-study.html',
+                    'ai-literacy-case-study.html', 
+                    'teacher-pd-case-study.html',
+                    'human-rights-case-study.html'
+                ];
+                
+                // Open the corresponding case study
+                window.open(caseStudyUrls[index], '_blank');
             });
         });
 
