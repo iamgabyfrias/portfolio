@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Human Rights Education Case Study - Gabriela Frias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #cc8963;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #a0522d;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #cc8963, #a0522d);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #f8f6f3;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #cc8963;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .topic-card {
+            background: #fff7ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f97316;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            color: #ea580c;
+            margin-bottom: 0.5rem;
+        }
+
+        .approach-highlight {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .approach-title {
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .station-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .station-card {
+            background: #ecfdf5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            text-align: center;
+        }
+
+        .station-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .station-title {
+            font-weight: 600;
+            color: #047857;
+            margin-bottom: 0.5rem;
+        }
+
+        .cultural-bridge {
+            background: #fef3c7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+            margin: 1rem 0;
+        }
+
+        .cultural-title {
+            font-weight: 600;
+            color: #d97706;
+            margin-bottom: 0.5rem;
+        }
+
+        .sensitivity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .sensitivity-card {
+            background: #fdf2f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ec4899;
+        }
+
+        .sensitivity-title {
+            font-weight: 600;
+            color: #be185d;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-highlight {
+            background: #f0fdf4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #16a34a;
+            margin: 1rem 0;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lesson-card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .lesson-title {
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .key-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="hero-section">
+            <h1 class="hero-title">Global Human Rights Education</h1>
+            <p class="hero-subtitle">Cross-Cultural ELA Curriculum Connecting Students to Global Justice Issues</p>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <span class="metric-number">16</span>
+                    <span class="metric-label">Teachers Coached</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">2</span>
+                    <span class="metric-label">Grade Levels</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">School-Wide</span>
+                    <span class="metric-label">Adoption</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">The Challenge</h2>
+                <p class="section-subtitle">Making global injustices meaningful to students in China</p>
+            </div>
+            <div class="section-content">
+                <p>How do you help students in China understand and connect with global human rights issues while making complex historical and contemporary injustices accessible and meaningful? Students needed to develop empathy and critical thinking about experiences far from their own reality.</p>
+                
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <div class="topic-title">🏃‍♀️ Darfur Refugees</div>
+                        <p>Contemporary crisis involving displacement, violence, and the fight for basic human dignity and safety.</p>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-title">💔 Holocaust Victims</div>
+                        <p>Historical genocide demonstrating the extreme consequences of hatred and the importance of standing up for others.</p>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-title">🌾 Khmer Rouge Survivors</div>
+                        <p>Asian historical context showing how political extremism can devastate communities and families.</p>
+                    </div>
+                    <div class="topic-card">
+                        <div class="topic-title">✊ U.S. Segregation</div>
+                        <p>Civil rights struggles illustrating systematic oppression and the power of peaceful resistance.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 1.5rem;"><strong>Core Challenge:</strong> These topics were emotionally heavy and culturally distant. Students needed scaffolding to process difficult content while developing genuine understanding rather than superficial awareness.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Station-Based Learning Design</h2>
+                <p class="section-subtitle">Multi-modal approach to complex topics</p>
+            </div>
+            <div class="section-content">
+                <div class="approach-highlight">
+                    <div class="approach-title">🎯 Pedagogical Approach</div>
+                    <p>Created comprehensive curriculum using station-based learning with documentaries, music, literature, and cultural parallels to help students process difficult topics with empathy and understanding.</p>
+                </div>
+
+                <div class="station-grid">
+                    <div class="station-card">
+                        <div class="station-icon">🎬</div>
+                        <div class="station-title">Documentary Station</div>
+                        <p>Short films providing historical context and personal testimonies to humanize abstract concepts.</p>
+                    </div>
+                    <div class="station-card">
+                        <div class="station-icon">🎵</div>
+                        <div class="station-title">Music & Art Station</div>
+                        <p>Songs, poetry, and artwork from affected communities to explore emotional responses to injustice.</p>
+                    </div>
+                    <div class="station-card">
+                        <div class="station-icon">📚</div>
+                        <div class="station-title">Literature Station</div>
+                        <p>First-person narratives and memoirs providing intimate perspectives on human rights struggles.</p>
+                    </div>
+                    <div class="station-card">
+                        <div class="station-icon">🤝</div>
+                        <div class="station-title">Connection Station</div>
+                        <p>Activities linking global issues to local experiences and universal human values.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Cultural Bridge Building</h2>
+                <p class="section-subtitle">Connecting global experiences to local understanding</p>
+            </div>
+            <div class="section-content">
+                <p>The key to success was helping students find universal human experiences and values that transcended cultural boundaries, while respecting the unique contexts of each historical situation.</p>
+
+                <div class="cultural-bridge">
+                    <div class="cultural-title">🌉 Connection Strategies</div>
+                    <p>Used Chinese philosophical concepts about justice, fairness, and community responsibility to create entry points for understanding global human rights principles. Drew parallels to historical examples of courage and resistance in Chinese culture while being careful not to oversimplify complex international issues.</p>
+                </div>
+
+                <div class="sensitivity-grid">
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Universal Values</div>
+                        <p>Focused on shared human experiences: family separation, loss of home, courage in adversity, and the desire for safety and dignity.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Age-Appropriate Processing</div>
+                        <p>Balanced historical accuracy with emotional safety, providing support for students processing difficult content.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Critical Thinking Development</div>
+                        <p>Encouraged questions about justice, responsibility, and how individuals can make a difference in preventing injustice.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Cultural Respect</div>
+                        <p>Maintained respect for the specific contexts and experiences of each group while finding meaningful connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Handling Sensitive Content</h2>
+                <p class="section-subtitle">Strategies for teaching difficult topics with care</p>
+            </div>
+            <div class="section-content">
+                <p>Teaching about genocide, violence, and systematic oppression to middle school students required careful consideration of emotional impact while maintaining educational integrity.</p>
+
+                <div class="approach-highlight">
+                    <div class="approach-title">🛡️ Safety-First Approach</div>
+                    <p>Created emotionally safe learning environments where students could ask questions, express confusion, and process difficult emotions without judgment. Established clear guidelines for respectful discussion and provided multiple ways for students to engage with the content.</p>
+                </div>
+
+                <div class="sensitivity-grid">
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Scaffolded Exposure</div>
+                        <p>Introduced difficult concepts gradually, starting with universal themes before exploring specific historical details.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Choice in Engagement</div>
+                        <p>Provided multiple ways for students to participate, allowing them to engage at their comfort level while still meeting learning objectives.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Hope and Agency</div>
+                        <p>Balanced difficult historical content with examples of resilience, resistance, and positive change to maintain student agency.</p>
+                    </div>
+                    <div class="sensitivity-card">
+                        <div class="sensitivity-title">Ongoing Support</div>
+                        <p>Created opportunities for continued discussion and processing, recognizing that understanding develops over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Results & Impact</h2>
+                <p class="section-subtitle">Transforming global awareness and critical thinking</p>
+            </div>
+            <div class="section-content">
+                <div class="impact-highlight">
+                    <p><strong>Curriculum Adoption:</strong> Students developed global awareness and empathy while building critical thinking skills about justice and human rights. The framework was adopted throughout the school's humanities curriculum.</p>
+                </div>
+                
+                <p><strong>Program Outcomes:</strong></p>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Students demonstrated increased empathy and global awareness through discussions and projects</li>
+                    <li>Developed critical thinking skills about justice, fairness, and individual responsibility</li>
+                    <li>Created replicable framework for teaching sensitive topics across cultures</li>
+                    <li>Coached 16 teachers in implementing culturally sensitive human rights education</li>
+                    <li>Built sustainable curriculum that continued beyond initial implementation</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Educational Impact:</strong> Students developed tools for understanding contemporary global issues and their role as global citizens, while building critical thinking skills for navigating complex moral and ethical questions.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Lessons Learned</h2>
+                <p class="section-subtitle">Insights for cross-cultural human rights education</p>
+            </div>
+            <div class="section-content">
+                <div class="lesson-grid">
+                    <div class="lesson-card">
+                        <div class="lesson-title">Universal Values Connect</div>
+                        <p>Finding shared human experiences creates bridges for understanding across cultural and historical boundaries.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Multiple Modalities Matter</div>
+                        <p>Using documentaries, music, literature, and discussion allowed students to engage with difficult content in diverse ways.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Safety Enables Learning</div>
+                        <p>Creating emotionally safe environments was essential for students to process difficult topics and develop genuine understanding.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Cultural Sensitivity Is Key</div>
+                        <p>Respecting local context while addressing global issues requires careful balance and deep cultural understanding.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Teacher Support Essential</div>
+                        <p>Coaches and teachers needed extensive support to feel confident facilitating sensitive discussions about global injustices.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Age-Appropriate Depth</div>
+                        <p>Middle school students can engage with complex moral issues when content is appropriately scaffolded and supported.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #cc8963, #a0522d); border-radius: 12px;">
+            <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Interested in developing culturally sensitive global education programs?</p>
+            <a href="mailto:gabf@pm.me" style="display: inline-block; background: white; color: #a0522d; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Let's Connect</a>
+        </div>
+    </div>
+</body>
+</html>
