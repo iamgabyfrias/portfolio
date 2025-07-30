@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriela Frias - Learning Experience Design Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            color: #a0522d;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #cc8963 0%, #a0522d 100%);
+            border-radius: 16px;
+            margin: 2rem 0 3rem 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #a0522d, #cc8963);
+            color: white;
+        }
+
+        .project-card:nth-child(2) .project-header {
+            background: linear-gradient(135deg, #cc8963, #f4a261);
+        }
+
+        .project-card:nth-child(3) .project-header {
+            background: linear-gradient(135deg, #d4956f, #f4a261);
+            color: white;
+        }
+
+        .project-card:nth-child(4) .project-header {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #cc8963;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .challenge, .solution, .impact {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #cc8963;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .view-details {
+            background: #cc8963;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .view-details:hover {
+            background: #d4956f;
+        }
+
+        .contact-section {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            background: linear-gradient(135deg, #cc8963, #a0522d);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(160, 82, 45, 0.2);
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gabriela Frias</h1>
+            <p>Curriculum and Learning Experience Designer | Creating Impactful Educational Content That Drives Behavior Change</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Project 1: Vishing Module -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Corporate Security Awareness Training</div>
+                    <div class="project-subtitle">Interactive eLearning Module | Adult Professional Development</div>
+                </div>
+                <div class="project-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="metric-number">15-20</span>
+                            <span class="metric-label">Minutes</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">92%</span>
+                            <span class="metric-label">Behavior Improvement</span>
+                        </div>
+                    </div>
+
+                    <div class="challenge">
+                        <div class="section-title">Challenge</div>
+                        <p>Corporate clients in finance and accounting were consistently failing phishing simulations, particularly those targeting their industry or appearing to come from "HR." Employees were also downloading malware-riddled apps and clicking attachments from compromised contacts.</p>
+                    </div>
+
+                    <div class="solution">
+                        <div class="section-title">Solution</div>
+                        <p>Designed an interactive scenario-based eLearning experience featuring realistic audio examples, decision-making branches, and immediate feedback. Used storytelling to create emotional connection while building practical recognition skills.</p>
+                    </div>
+
+                    <div class="impact">
+                        <div class="section-title">Impact</div>
+                        <p>Reduced client phish-prone behavior from 40.8% to 3.4% through systematic monthly simulations and targeted follow-up training. Demonstrated measurable behavior change in high-stakes corporate environments.</p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Adult Learning</span>
+                        <span class="tag">Behavior Change</span>
+                        <span class="tag">Interactive Design</span>
+                        <span class="tag">Scenario-Based Learning</span>
+                        <span class="tag">Audio Production</span>
+                    </div>
+
+                    <button class="view-details">View Full Case Study</button>
+                </div>
+            </div>
+
+            <!-- Project 2: AI Literacy -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">AI Literacy Curriculum</div>
+                    <div class="project-subtitle">Elementary Education | Hands-On Technology Learning</div>
+                </div>
+                <div class="project-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="metric-number">3-5</span>
+                            <span class="metric-label">Grade Levels</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">100K+</span>
+                            <span class="metric-label">Global Learners</span>
+                        </div>
+                    </div>
+
+                    <div class="challenge">
+                        <div class="section-title">Challenge</div>
+                        <p>How do you teach complex machine learning concepts to 8-year-olds? Traditional tech education approaches were too abstract for young learners who need concrete, hands-on experiences.</p>
+                    </div>
+
+                    <div class="solution">
+                        <div class="section-title">Solution</div>
+                        <p>Created "Strike a Pose" project where students train AI models to recognize emotions through body language. Combined video tutorials, interactive worksheets, and collaborative reflection to make abstract concepts tangible and engaging.</p>
+                    </div>
+
+                    <div class="impact">
+                        <div class="section-title">Impact</div>
+                        <p>Successfully introduced AI concepts to elementary students worldwide through Girls Who Code programs. Created replicable framework for making advanced technology accessible to young learners across diverse cultural contexts.</p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">K-12 Education</span>
+                        <span class="tag">Technology Integration</span>
+                        <span class="tag">Project-Based Learning</span>
+                        <span class="tag">Video Production</span>
+                        <span class="tag">Global Curriculum</span>
+                    </div>
+
+                    <button class="view-details">View Full Case Study</button>
+                </div>
+            </div>
+
+            <!-- Project 3: Professional Development -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Teacher Professional Development</div>
+                    <div class="project-subtitle">Hands-On Workshop Design | Adult Learning Implementation</div>
+                </div>
+                <div class="project-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="metric-number">12</span>
+                            <span class="metric-label">Educators Trained</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">30+</span>
+                            <span class="metric-label">Lesson Plans Created</span>
+                        </div>
+                    </div>
+
+                    <div class="challenge">
+                        <div class="section-title">Challenge</div>
+                        <p>High school teachers with no computer science background needed to confidently lead coding exercises and troubleshoot student questions. Traditional PD often fails to bridge theory-to-practice gap.</p>
+                    </div>
+
+                    <div class="solution">
+                        <div class="section-title">Solution</div>
+                        <p>Designed experiential learning model: teachers experienced each lesson as students first, then debriefed instructional strategies as educators. Combined hands-on practice with systematic curriculum design principles.</p>
+                    </div>
+
+                    <div class="impact">
+                        <div class="section-title">Impact</div>
+                        <p>Within one week, novice teachers gained confidence to lead coding exercises independently. Created sustainable curriculum implementation process for underserved communities, ensuring quality computer science education access.</p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Professional Development</span>
+                        <span class="tag">Workshop Facilitation</span>
+                        <span class="tag">Curriculum Implementation</span>
+                        <span class="tag">Adult Learning Theory</span>
+                        <span class="tag">Community Impact</span>
+                    </div>
+
+                    <button class="view-details">View Full Case Study</button>
+                </div>
+            </div>
+
+            <!-- Project 4: International Curriculum -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Global Human Rights Education</div>
+                    <div class="project-subtitle">International ELA Curriculum | Cross-Cultural Learning Design</div>
+                </div>
+                <div class="project-content">
+                    <div class="metrics">
+                        <div class="metric">
+                            <span class="metric-number">16</span>
+                            <span class="metric-label">Teachers Coached</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">2</span>
+                            <span class="metric-label">Grade Levels</span>
+                        </div>
+                    </div>
+
+                    <div class="challenge">
+                        <div class="section-title">Challenge</div>
+                        <p>How do you help students understand global human rights issues while making complex historical and contemporary injustices accessible and meaningful? Students needed to connect with experiences far from their own reality.</p>
+                    </div>
+
+                    <div class="solution">
+                        <div class="section-title">Solution</div>
+                        <p>Created comprehensive curriculum exploring children's rights globally through multiple perspectives - Darfur refugees, Holocaust victims, Khmer Rouge survivors, and U.S. segregation. Used station-based learning with documentaries, music, literature, and local cultural parallels to help students process difficult topics with empathy and understanding.</p>
+                    </div>
+
+                    <div class="impact">
+                        <div class="section-title">Impact</div>
+                        <p>Successfully helped students develop global awareness and empathy while building critical thinking skills about justice and human rights. Created framework for teaching sensitive topics across cultures that was adopted throughout the school's humanities curriculum.</p>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Global Human Rights</span>
+                        <span class="tag">Sensitive Topic Design</span>
+                        <span class="tag">ELA Curriculum</span>
+                        <span class="tag">Multimedia Integration</span>
+                        <span class="tag">Cross-Cultural Education</span>
+                    </div>
+
+                    <button class="view-details">View Full Case Study</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Let's Discuss Your Learning Design Challenges</h2>
+            <p>I'm passionate about creating educational experiences that drive real behavior change and meaningful engagement.</p>
+            <div class="contact-links">
+                <a href="mailto:gabf@pm.me" class="contact-link">Email Me</a>
+                <a href="#" class="contact-link">LinkedIn</a>
+                <a href="#" class="contact-link">Full Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and interaction effects
+        document.querySelectorAll('.view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real portfolio, this would link to detailed case studies
+                alert('This would link to a detailed case study page with process documentation, deliverables, and detailed impact metrics.');
+            });
+        });
+
+        // Add smooth entrance animations
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>
