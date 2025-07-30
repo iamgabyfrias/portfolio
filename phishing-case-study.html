@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Phishing Training Case Study - Gabriela Frias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #cc8963;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #a0522d;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #cc8963, #a0522d);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #f8f6f3;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #cc8963;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .step-number {
+            background: #cc8963;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .tools-used {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tool-card {
+            background: #f8f6f3;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tool-name {
+            font-weight: 600;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-box {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #0369a1;
+            font-size: 1.1rem;
+        }
+
+        .quote-author {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f8f6f3;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .timeline-month {
+            font-weight: 600;
+            color: #a0522d;
+            font-size: 0.9rem;
+        }
+
+        .timeline-event {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .arrow {
+            color: #cc8963;
+            font-size: 1.5rem;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lesson-card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .lesson-title {
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .key-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="hero-section">
+            <h1 class="hero-title">Corporate Phishing Training</h1>
+            <p class="hero-subtitle">Interactive Security Awareness Program That Achieved 92% Behavior Improvement</p>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <span class="metric-number">92%</span>
+                    <span class="metric-label">Behavior Improvement</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">40.8% → 3.4%</span>
+                    <span class="metric-label">Phish-Prone Rate</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">5-6</span>
+                    <span class="metric-label">Months Timeline</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">The Challenge</h2>
+                <p class="section-subtitle">High-stakes security vulnerabilities in corporate environments</p>
+            </div>
+            <div class="section-content">
+                <p>Corporate clients in finance and accounting sectors were consistently falling victim to phishing attacks, particularly those targeting their industry or appearing to come from internal "HR" departments. Traditional security awareness training wasn't translating to real-world behavior change.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Specific vulnerabilities included:</strong></p>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Employees downloading malware-riddled applications</li>
+                    <li>Clicking attachments from compromised contacts</li>
+                    <li>Falling for industry-specific phishing campaigns</li>
+                    <li>Responding to fake HR communications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Design Process</h2>
+                <p class="section-subtitle">A systematic approach to behavior change through experiential learning</p>
+            </div>
+            <div class="section-content">
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Baseline Assessment</h4>
+                            <p>Conducted initial phishing simulations using KnowBe4 to establish current vulnerability levels across different client organizations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Scenario Development</h4>
+                            <p>Created industry-specific phishing scenarios that reflected real-world attacks employees were likely to encounter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Interactive Training Design</h4>
+                            <p>Developed live virtual training sessions via Zoom using interactive presentations that encouraged active participation rather than passive consumption.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Continuous Monitoring</h4>
+                            <p>Implemented monthly phishing simulations to track behavior change and identify areas needing additional reinforcement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Tools & Technology</h2>
+                <p class="section-subtitle">Strategic use of platforms to maximize engagement and tracking</p>
+            </div>
+            <div class="section-content">
+                <div class="tools-used">
+                    <div class="tool-card">
+                        <div class="tool-name">KnowBe4</div>
+                        <p>Phishing simulation platform for creating realistic scenarios and tracking employee responses</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-name">Zoom</div>
+                        <p>Interactive virtual training delivery with real-time engagement features</p>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-name">Interactive Presentations</div>
+                        <p>Custom-designed presentations with decision points and scenario-based learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Implementation Timeline</h2>
+                <p class="section-subtitle">5-6 month systematic behavior change journey</p>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-month">Month 1</div>
+                        <div class="timeline-event">Baseline Assessment</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">Month 2-3</div>
+                        <div class="timeline-event">Training Rollout</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">Month 4-5</div>
+                        <div class="timeline-event">Reinforcement</div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="timeline-item">
+                        <div class="timeline-month">Month 6</div>
+                        <div class="timeline-event">Final Assessment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Results & Impact</h2>
+                <p class="section-subtitle">Measurable behavior change and sustained improvement</p>
+            </div>
+            <div class="section-content">
+                <p><strong>Primary Achievement:</strong> Reduced client phish-prone percentage from 40.8% to 3.4% - a 92% improvement in security behavior.</p>
+                
+                <div class="quote-box">
+                    <p class="quote-text">"I'm now more conscious about what is emailed to me and have emailed you to make sure emails weren't scams."</p>
+                    <p class="quote-author">— Corporate Training Participant</p>
+                </div>
+                
+                <p><strong>Sustained Impact:</strong> Employees began proactively reaching out to verify suspicious communications, demonstrating internalized security awareness rather than just compliance.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Key Success Factors:</strong></p>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Interactive delivery format that encouraged active participation</li>
+                    <li>Industry-specific scenarios that felt relevant and realistic</li>
+                    <li>Systematic reinforcement through monthly simulations</li>
+                    <li>Focus on understanding rather than memorization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Lessons Learned</h2>
+                <p class="section-subtitle">Insights for future security awareness programs</p>
+            </div>
+            <div class="section-content">
+                <div class="lessons-grid">
+                    <div class="lesson-card">
+                        <div class="lesson-title">Real-World Relevance Matters</div>
+                        <p>Training scenarios must closely mirror actual threats employees face in their specific industry and role.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Interactive > Passive</div>
+                        <p>Live, interactive sessions with immediate feedback were far more effective than traditional video-based training.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Behavior Change Takes Time</div>
+                        <p>Sustained improvement required 5-6 months of consistent reinforcement and measurement.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Trust Enables Learning</div>
+                        <p>Creating a safe environment where employees could ask questions without judgment was crucial for engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #cc8963, #a0522d); border-radius: 12px;">
+            <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Ready to discuss how systematic learning design can drive security behavior change?</p>
+            <a href="mailto:gabf@pm.me" style="display: inline-block; background: white; color: #a0522d; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Let's Connect</a>
+        </div>
+    </div>
+</body>
+</html>
