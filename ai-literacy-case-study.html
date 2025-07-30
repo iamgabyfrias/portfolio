@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Literacy Curriculum Case Study - Gabriela Frias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
+            min-height: 100vh;
+            letter-spacing: 0.01em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #cc8963;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #a0522d;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #cc8963, #a0522d);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255,255,255,0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .content-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            background: #f8f6f3;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid #cc8963;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .analogy-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analogy-title {
+            font-weight: 600;
+            color: #ea580c;
+            margin-bottom: 0.5rem;
+        }
+
+        .analogy-text {
+            color: #9a3412;
+            font-size: 1rem;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .step-number {
+            background: #cc8963;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #a0522d;
+            margin-bottom: 0.5rem;
+        }
+
+        .deliverable-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .deliverable-card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .deliverable-title {
+            font-weight: 600;
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: #047857;
+            font-size: 1.1rem;
+        }
+
+        .quote-author {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .challenge-card {
+            background: #fef2f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ef4444;
+        }
+
+        .challenge-title {
+            font-weight: 600;
+            color: #dc2626;
+            margin-bottom: 0.5rem;
+        }
+
+        .solution-highlight {
+            background: #f0fdf4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #16a34a;
+            margin: 1rem 0;
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .lesson-card {
+            background: #fff7ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f97316;
+        }
+
+        .lesson-title {
+            font-weight: 600;
+            color: #ea580c;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .key-metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
+        <div class="hero-section">
+            <h1 class="hero-title">AI Literacy Curriculum</h1>
+            <p class="hero-subtitle">Making Machine Learning Accessible to Elementary Students Through "Strike a Pose"</p>
+            
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <span class="metric-number">10,000+</span>
+                    <span class="metric-label">Learners</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">Grades 3-5</span>
+                    <span class="metric-label">Target Audience</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-number">Global</span>
+                    <span class="metric-label">Girls Who Code Reach</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">The Challenge</h2>
+                <p class="section-subtitle">Making abstract AI concepts concrete for young minds</p>
+            </div>
+            <div class="section-content">
+                <p>How do you teach complex machine learning concepts to 8-year-olds? Traditional technology education approaches were too abstract for young learners who need concrete, hands-on experiences to understand new concepts.</p>
+                
+                <div class="challenge-grid">
+                    <div class="challenge-card">
+                        <div class="challenge-title">Abstract Concepts</div>
+                        <p>Machine learning algorithms are inherently abstract and difficult for children to visualize or understand.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-title">Age-Appropriate Design</div>
+                        <p>Content needed to be engaging and accessible without oversimplifying the core concepts.</p>
+                    </div>
+                    <div class="challenge-card">
+                        <div class="challenge-title">Critical Thinking</div>
+                        <p>How to introduce elementary students to the limitations and biases of AI systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Teaching Through Analogies</h2>
+                <p class="section-subtitle">Making machine learning relatable through familiar concepts</p>
+            </div>
+            <div class="section-content">
+                <p>The key to success was finding analogies that connected AI concepts to children's existing knowledge and experiences.</p>
+                
+                <div class="analogy-box">
+                    <div class="analogy-title">🐱 Cat Recognition Analogy</div>
+                    <p class="analogy-text">Just like how children learn to identify cats by recognizing various traits (whiskers, pointy ears, meowing), AI learns to recognize things by finding patterns. There are many different kinds of cats, but they all share certain characteristics that help us know they're cats - and some traits cats share with other animals too!</p>
+                </div>
+
+                <div class="analogy-box">
+                    <div class="analogy-title">🗳️ Election Prediction Analogy</div>
+                    <p class="analogy-text">We used Mexico's presidential election to show how AI makes predictions. Students predicted the next president would be a man (based on historical data), but the winner was actually a woman! This perfectly demonstrated that AI isn't always accurate and can reflect biases from past data.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">The "Strike a Pose" Solution</h2>
+                <p class="section-subtitle">Hands-on emotion recognition project</p>
+            </div>
+            <div class="section-content">
+                <div class="solution-highlight">
+                    <p><strong>Core Concept:</strong> Students train an AI model to recognize emotions through body language by creating their own "Strike a Pose" projects where they teach machines to identify feelings through poses and movements.</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Choose an Emotion and Pose</h4>
+                            <p>Students work in groups to select a feeling they want their AI to recognize (happy, sad, excited, frustrated, etc.) and poses associated with that emotion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Create Training Data</h4>
+                            <p>Teams develop at least two poses or movements that represent their chosen emotion, taking multiple photos to "train" their AI model.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Test the Model</h4>
+                            <p>Students test whether their AI can correctly identify the emotion when presented with new poses, discovering what works and what doesn't.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Improve and Reflect</h4>
+                            <p>Groups discuss their observations, share insights, and iterate on their models to improve accuracy based on testing results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Curriculum Deliverables</h2>
+                <p class="section-subtitle">Complete learning ecosystem for educators</p>
+            </div>
+            <div class="section-content">
+                <div class="deliverable-grid">
+                    <div class="deliverable-card">
+                        <div class="deliverable-title">Narrated Video Tutorials</div>
+                        <p>Step-by-step instructional videos introducing AI concepts and guiding students through the project setup.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <div class="deliverable-title">Interactive Worksheets</div>
+                        <p>Planning documents and reflection sheets that help students organize their thinking and document their learning journey.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <div class="deliverable-title">Facilitator Guides</div>
+                        <p>Comprehensive teacher resources with timing, discussion prompts, and troubleshooting tips for smooth implementation.</p>
+                    </div>
+                    <div class="deliverable-card">
+                        <div class="deliverable-title">Assessment Rubrics</div>
+                        <p>Age-appropriate evaluation tools focusing on understanding, creativity, and critical thinking rather than technical perfection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Results & Impact</h2>
+                <p class="section-subtitle">Transforming how children understand AI</p>
+            </div>
+            <div class="section-content">
+                <p><strong>Educational Reach:</strong> Successfully introduced computer science, cybersecurity, and AI concepts to 10,000+ students worldwide through Girls Who Code programs.</p>
+                
+                
+                <p><strong>Key Achievements:</strong></p>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Created replicable framework for teaching advanced technology concepts to young learners</li>
+                    <li>Enabled critical discussions about AI bias and limitations at elementary level</li>
+                    <li>Provided teachers with confidence to facilitate AI literacy without deep technical knowledge</li>
+                    <li>Demonstrated that complex concepts can be accessible when properly scaffolded</li>
+                </ul>
+
+                <p style="margin-top: 1rem;"><strong>Critical Thinking Outcomes:</strong> Students successfully grasped that AI systems can be wrong and reflect human biases, as demonstrated through the election prediction exercise where they learned that historical data doesn't always predict future outcomes.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Lessons Learned</h2>
+                <p class="section-subtitle">Insights for future elementary technology education</p>
+            </div>
+            <div class="section-content">
+                <div class="lesson-grid">
+                    <div class="lesson-card">
+                        <div class="lesson-title">Analogies Are Everything</div>
+                        <p>Connecting new concepts to familiar experiences (cats, elections) made abstract AI principles accessible to young minds.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Hands-On Beats Theoretical</div>
+                        <p>Students understood AI better by creating and testing their own models rather than just learning about how AI works.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Teacher Confidence Matters</div>
+                        <p>Providing simple, clear setup instructions enabled educators to facilitate meaningful learning without being AI experts themselves.</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-title">Critical Thinking Early</div>
+                        <p>Elementary students can absolutely engage with concepts of bias and accuracy when presented through age-appropriate examples.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #cc8963, #a0522d); border-radius: 12px;">
+            <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Interested in making complex technology accessible to young learners?</p>
+            <a href="mailto:gabf@pm.me" style="display: inline-block; background: white; color: #a0522d; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Let's Connect</a>
+        </div>
+    </div>
+</body>
+</html>
