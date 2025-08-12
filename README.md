@@ -12,16 +12,16 @@ This portfolio highlights four key projects that represent my expertise in:
 
 ## Featured Projects
 
-### 🛡️ Corporate Security Awareness Training
+### Corporate Security Awareness Training
 Interactive eLearning that reduced client phish-prone behavior by 92% (from 40.8% to 3.4%)
 
-### 🤖 AI Literacy Curriculum
+### AI Literacy Curriculum
 Elementary education program reaching 100,000+ students through Girls Who Code
 
-### 👩‍🏫 Teacher Professional Development
+### Teacher Professional Development
 Hands-on workshops that transformed 12 educators into confident computer science instructors
 
-### 🌍 Global Human Rights Education
+### Global Human Rights Education
 Cross-cultural curriculum covering Darfur refugees, Holocaust victims, Khmer Rouge, and U.S. segregation
 
 ## Technologies Used
