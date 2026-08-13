@@ -1,482 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Human Rights Education Case Study - Gabriela Frias</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #4a4a4a;
-            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
-            min-height: 100vh;
-            letter-spacing: 0.01em;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: #cc8963;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #a0522d;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #cc8963, #a0522d);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .key-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .metric-card {
-            background: rgba(255,255,255,0.15);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .content-section {
-            background: white;
-            margin-bottom: 2rem;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .section-header {
-            background: #f8f6f3;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid #cc8963;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #a0522d;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .section-content {
-            padding: 2rem;
-        }
-
-        .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .topic-card {
-            background: #fff7ed;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #f97316;
-        }
-
-        .topic-title {
-            font-weight: 600;
-            color: #ea580c;
-            margin-bottom: 0.5rem;
-        }
-
-        .approach-highlight {
-            background: #f0f9ff;
-            border-left: 4px solid #0ea5e9;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .approach-title {
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .station-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .station-card {
-            background: #ecfdf5;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-            text-align: center;
-        }
-
-        .station-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .station-title {
-            font-weight: 600;
-            color: #047857;
-            margin-bottom: 0.5rem;
-        }
-
-        .cultural-bridge {
-            background: #fef3c7;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #f59e0b;
-            margin: 1rem 0;
-        }
-
-        .cultural-title {
-            font-weight: 600;
-            color: #d97706;
-            margin-bottom: 0.5rem;
-        }
-
-        .sensitivity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .sensitivity-card {
-            background: #fdf2f8;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #ec4899;
-        }
-
-        .sensitivity-title {
-            font-weight: 600;
-            color: #be185d;
-            margin-bottom: 0.5rem;
-        }
-
-        .impact-highlight {
-            background: #f0fdf4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #16a34a;
-            margin: 1rem 0;
-        }
-
-        .lesson-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .lesson-card {
-            background: #f0f9ff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #0ea5e9;
-        }
-
-        .lesson-title {
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .key-metrics {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Human Rights Education — Gabriela Frias Sun</title>
+<meta name="description" content="A cross-cultural ELA curriculum that helped students in China engage with global human-rights issues through story and scaffolding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){var t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+<style>
+:root{--serif:'Fraunces',Georgia,serif;--sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--acc-light:#512B46;--acc-dark:#CB8EBC;}
+:root,:root[data-theme="light"]{--bg:#F7F7F5;--surface:#FFFFFF;--ink:#1A1B1E;--muted:#6A6B6E;--rule:#E4E3DF;--faint:#F0EFEC;--accent:var(--acc-light);--tint:#F1E9EF;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141419;--surface:#1C1D23;--ink:#ECEBE8;--muted:#9C9DA2;--rule:#2C2D35;--faint:#1F2027;--accent:var(--acc-dark);--tint:#221A20;}}
+:root[data-theme="dark"]{--bg:#141419;--surface:#1C1D23;--ink:#ECEBE8;--muted:#9C9DA2;--rule:#2C2D35;--faint:#1F2027;--accent:var(--acc-dark);--tint:#221A20;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease;}
+.wrap{max-width:900px;margin:0 auto;padding:0 32px;}
+.themebtn{position:fixed;top:22px;right:22px;z-index:60;width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--rule);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .2s,color .2s,background .4s;}
+.themebtn:hover{border-color:var(--accent);color:var(--accent);}
+.themebtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.themebtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;}
+.themebtn .moon{display:block;}.themebtn .sun{display:none;}
+:root[data-theme="dark"] .themebtn .moon{display:none;}:root[data-theme="dark"] .themebtn .sun{display:block;}
+.backlink{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;margin-bottom:30px;}
+.backlink:hover{color:var(--accent);}
+.hero{padding:96px 0 60px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 24px;}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6.4vw,68px);line-height:1.03;letter-spacing:-.015em;margin:0 0 16px;}
+.hero .role{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:var(--muted);margin:0 0 30px;}
+.hero .thesis{font-size:20px;line-height:1.55;max-width:34ch;margin:0 0 40px;}
+.hero .thesis b{font-weight:600;}
+.standfirst{font-size:19px;line-height:1.55;color:var(--muted);max-width:56ch;margin:16px 0 34px;}
+.proof{display:inline-flex;align-items:baseline;gap:16px;padding:18px 24px;background:var(--tint);border-left:2px solid var(--accent);}
+.proof .shift{font-family:var(--mono);font-weight:500;font-size:clamp(22px,3.4vw,30px);color:var(--ink);white-space:nowrap;}
+.proof .shift .arrow,.stat .v .arrow,.outcome .shift .arrow{color:var(--accent);padding:0 6px;}
+.proof .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);max-width:16ch;line-height:1.45;}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px;}
+.stat{border:1px solid var(--rule);border-radius:9px;padding:14px 18px;min-width:118px;}
+.stat .v{font-family:var(--mono);font-weight:500;font-size:18px;color:var(--ink);white-space:nowrap;}
+.stat .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+.cases{padding:8px 0 40px;}
+.case{padding:54px 0;border-top:1px solid var(--rule);}
+.case-eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
+.case h2{font-family:var(--serif);font-weight:500;font-size:clamp(27px,4.2vw,38px);line-height:1.08;letter-spacing:-.01em;margin:0 0 18px;}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0 0 28px;display:flex;flex-wrap:wrap;}
+.meta span:not(:last-child)::after{content:"·";padding:0 10px;color:var(--rule);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-bottom:28px;}
+.block h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 9px;font-weight:500;}
+.block p{margin:0;font-size:15.5px;line-height:1.62;}
+.outcome{grid-column:1 / -1;background:var(--faint);padding:22px 26px;border-left:2px solid var(--accent);}
+.outcome h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:500;}
+.outcome .shift{font-family:var(--mono);font-weight:500;font-size:22px;color:var(--ink);display:block;margin-bottom:8px;}
+.outcome p{margin:0;font-size:15.5px;line-height:1.62;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;}
+.caselink{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:var(--accent);text-decoration:none;}
+.caselink:hover{text-decoration:underline;}
+.sec{padding:46px 0;border-top:1px solid var(--rule);}
+.sec .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;}
+.sec h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;margin:0 0 18px;}
+.sec p{font-size:16px;line-height:1.65;max-width:64ch;}
+.note{background:var(--tint);border-left:2px solid var(--accent);padding:20px 24px;margin:22px 0;}
+.note h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;font-weight:500;}
+.note p{margin:0;font-size:15.5px;}
+.steps{list-style:none;counter-reset:s;padding:0;margin:22px 0 0;}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 48px;}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid var(--rule);border-radius:6px;width:30px;height:30px;display:grid;place-items:center;}
+.steps li h4{font-family:var(--sans);font-weight:600;font-size:16px;margin:3px 0 5px;}
+.steps li p{margin:0;font-size:15px;color:var(--muted);max-width:60ch;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;}
+.card h4{font-family:var(--mono);font-size:12px;color:var(--accent);margin:0 0 8px;font-weight:500;}
+.card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted);}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px;}
+.col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;}
+.col ul{margin:0;padding-left:18px;}.col li{font-size:15px;line-height:1.5;margin-bottom:8px;}
+.quote{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;border-left:2px solid var(--accent);padding:4px 0 4px 22px;margin:26px 0;}
+.quote cite{display:block;font-family:var(--mono);font-style:normal;font-size:12px;letter-spacing:.05em;color:var(--muted);margin-top:12px;}
+.lessons{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px;margin-top:22px;}
+.lesson h4{font-family:var(--serif);font-weight:500;font-size:18px;margin:0 0 6px;}
+.lesson p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6;}
+footer{border-top:1px solid var(--rule);padding:70px 0 90px;}
+footer h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,36px);letter-spacing:-.01em;margin:0 0 16px;max-width:24ch;}
+footer p{color:var(--muted);max-width:46ch;margin:0 0 30px;}
+.links{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-decoration:none;padding:12px 22px;border-radius:6px;transition:all .18s;}
+.btn.primary{background:var(--accent);color:#fff;}
+:root[data-theme="dark"] .btn.primary{color:#141419;}
+.btn.ghost{border:1px solid var(--rule);color:var(--ink);}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.btn.primary:hover{opacity:.9;}.btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+@media(max-width:640px){.wrap{padding:0 22px;}.grid,.cards,.cols,.lessons{grid-template-columns:1fr;gap:20px;}.hero{padding:70px 0 48px;}.themebtn{top:16px;right:16px;}}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero,.case,.sec{animation:fadeup .6s ease both;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto;}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
-        
-        <div class="hero-section">
-            <h1 class="hero-title">Global Human Rights Education</h1>
-            <p class="hero-subtitle">Cross-Cultural ELA Curriculum Connecting Students to Global Justice Issues</p>
-            
-            <div class="key-metrics">
-                <div class="metric-card">
-                    <span class="metric-number">16</span>
-                    <span class="metric-label">Teachers Coached</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">2</span>
-                    <span class="metric-label">Grade Levels</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">School-Wide</span>
-                    <span class="metric-label">Adoption</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">The Challenge</h2>
-                <p class="section-subtitle">Making global injustices meaningful to students in China</p>
-            </div>
-            <div class="section-content">
-                <p>How do you help students in China understand and connect with global human rights issues while making complex historical and contemporary injustices accessible and meaningful? Students needed to develop empathy and critical thinking about experiences far from their own reality.</p>
-                
-                <div class="topics-grid">
-                    <div class="topic-card">
-                        <div class="topic-title">🏃‍♀️ Darfur Refugees</div>
-                        <p>Contemporary crisis involving displacement, violence, and the fight for basic human dignity and safety.</p>
-                    </div>
-                    <div class="topic-card">
-                        <div class="topic-title">💔 Holocaust Victims</div>
-                        <p>Historical genocide demonstrating the extreme consequences of hatred and the importance of standing up for others.</p>
-                    </div>
-                    <div class="topic-card">
-                        <div class="topic-title">🌾 Khmer Rouge Survivors</div>
-                        <p>Asian historical context showing how political extremism can devastate communities and families.</p>
-                    </div>
-                    <div class="topic-card">
-                        <div class="topic-title">✊ U.S. Segregation</div>
-                        <p>Civil rights struggles illustrating systematic oppression and the power of peaceful resistance.</p>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 1.5rem;"><strong>Core Challenge:</strong> These topics were emotionally heavy and culturally distant. Students needed scaffolding to process difficult content while developing genuine understanding rather than superficial awareness.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Station-Based Learning Design</h2>
-                <p class="section-subtitle">Multi-modal approach to complex topics</p>
-            </div>
-            <div class="section-content">
-                <div class="approach-highlight">
-                    <div class="approach-title">🎯 Pedagogical Approach</div>
-                    <p>Created comprehensive curriculum using station-based learning with documentaries, music, literature, and cultural parallels to help students process difficult topics with empathy and understanding.</p>
-                </div>
-
-                <div class="station-grid">
-                    <div class="station-card">
-                        <div class="station-icon">🎬</div>
-                        <div class="station-title">Documentary Station</div>
-                        <p>Short films providing historical context and personal testimonies to humanize abstract concepts.</p>
-                    </div>
-                    <div class="station-card">
-                        <div class="station-icon">🎵</div>
-                        <div class="station-title">Music & Art Station</div>
-                        <p>Songs, poetry, and artwork from affected communities to explore emotional responses to injustice.</p>
-                    </div>
-                    <div class="station-card">
-                        <div class="station-icon">📚</div>
-                        <div class="station-title">Literature Station</div>
-                        <p>First-person narratives and memoirs providing intimate perspectives on human rights struggles.</p>
-                    </div>
-                    <div class="station-card">
-                        <div class="station-icon">🤝</div>
-                        <div class="station-title">Connection Station</div>
-                        <p>Activities linking global issues to local experiences and universal human values.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Cultural Bridge Building</h2>
-                <p class="section-subtitle">Connecting global experiences to local understanding</p>
-            </div>
-            <div class="section-content">
-                <p>The key to success was helping students find universal human experiences and values that transcended cultural boundaries, while respecting the unique contexts of each historical situation.</p>
-
-                <div class="cultural-bridge">
-                    <div class="cultural-title">🌉 Connection Strategies</div>
-                    <p>Used Chinese philosophical concepts about justice, fairness, and community responsibility to create entry points for understanding global human rights principles. Drew parallels to historical examples of courage and resistance in Chinese culture while being careful not to oversimplify complex international issues.</p>
-                </div>
-
-                <div class="sensitivity-grid">
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Universal Values</div>
-                        <p>Focused on shared human experiences: family separation, loss of home, courage in adversity, and the desire for safety and dignity.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Age-Appropriate Processing</div>
-                        <p>Balanced historical accuracy with emotional safety, providing support for students processing difficult content.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Critical Thinking Development</div>
-                        <p>Encouraged questions about justice, responsibility, and how individuals can make a difference in preventing injustice.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Cultural Respect</div>
-                        <p>Maintained respect for the specific contexts and experiences of each group while finding meaningful connections.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Handling Sensitive Content</h2>
-                <p class="section-subtitle">Strategies for teaching difficult topics with care</p>
-            </div>
-            <div class="section-content">
-                <p>Teaching about genocide, violence, and systematic oppression to middle school students required careful consideration of emotional impact while maintaining educational integrity.</p>
-
-                <div class="approach-highlight">
-                    <div class="approach-title">🛡️ Safety-First Approach</div>
-                    <p>Created emotionally safe learning environments where students could ask questions, express confusion, and process difficult emotions without judgment. Established clear guidelines for respectful discussion and provided multiple ways for students to engage with the content.</p>
-                </div>
-
-                <div class="sensitivity-grid">
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Scaffolded Exposure</div>
-                        <p>Introduced difficult concepts gradually, starting with universal themes before exploring specific historical details.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Choice in Engagement</div>
-                        <p>Provided multiple ways for students to participate, allowing them to engage at their comfort level while still meeting learning objectives.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Hope and Agency</div>
-                        <p>Balanced difficult historical content with examples of resilience, resistance, and positive change to maintain student agency.</p>
-                    </div>
-                    <div class="sensitivity-card">
-                        <div class="sensitivity-title">Ongoing Support</div>
-                        <p>Created opportunities for continued discussion and processing, recognizing that understanding develops over time.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Results & Impact</h2>
-                <p class="section-subtitle">Transforming global awareness and critical thinking</p>
-            </div>
-            <div class="section-content">
-                <div class="impact-highlight">
-                    <p><strong>Curriculum Adoption:</strong> Students developed global awareness and empathy while building critical thinking skills about justice and human rights. The framework was adopted throughout the school's humanities curriculum.</p>
-                </div>
-                
-                <p><strong>Program Outcomes:</strong></p>
-                <ul style="margin-left: 2rem; margin-top: 0.5rem;">
-                    <li>Students demonstrated increased empathy and global awareness through discussions and projects</li>
-                    <li>Developed critical thinking skills about justice, fairness, and individual responsibility</li>
-                    <li>Created replicable framework for teaching sensitive topics across cultures</li>
-                    <li>Coached 16 teachers in implementing culturally sensitive human rights education</li>
-                    <li>Built sustainable curriculum that continued beyond initial implementation</li>
-                </ul>
-
-                <p style="margin-top: 1rem;"><strong>Educational Impact:</strong> Students developed tools for understanding contemporary global issues and their role as global citizens, while building critical thinking skills for navigating complex moral and ethical questions.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Lessons Learned</h2>
-                <p class="section-subtitle">Insights for cross-cultural human rights education</p>
-            </div>
-            <div class="section-content">
-                <div class="lesson-grid">
-                    <div class="lesson-card">
-                        <div class="lesson-title">Universal Values Connect</div>
-                        <p>Finding shared human experiences creates bridges for understanding across cultural and historical boundaries.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Multiple Modalities Matter</div>
-                        <p>Using documentaries, music, literature, and discussion allowed students to engage with difficult content in diverse ways.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Safety Enables Learning</div>
-                        <p>Creating emotionally safe environments was essential for students to process difficult topics and develop genuine understanding.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Cultural Sensitivity Is Key</div>
-                        <p>Respecting local context while addressing global issues requires careful balance and deep cultural understanding.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Teacher Support Essential</div>
-                        <p>Coaches and teachers needed extensive support to feel confident facilitating sensitive discussions about global injustices.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Age-Appropriate Depth</div>
-                        <p>Middle school students can engage with complex moral issues when content is appropriately scaffolded and supported.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #cc8963, #a0522d); border-radius: 12px;">
-            <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Interested in developing culturally sensitive global education programs?</p>
-            <a href="mailto:gabf@pm.me" style="display: inline-block; background: white; color: #a0522d; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Let's Connect</a>
-        </div>
-    </div>
-</body>
-</html>
+<button class="themebtn" id="themebtn" aria-label="Switch color theme">
+<svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+<svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+</button>
+<div class="wrap"><a class="backlink" href="index.html">&larr; Back to portfolio</a></div>
+<header class="hero"><div class="wrap">
+<p class="eyebrow">ELA Curriculum</p>
+<h1>Global Human Rights Education</h1>
+<p class="standfirst">A cross-cultural ELA curriculum that helped students in China connect with global human-rights issues through story, empathy, and careful scaffolding.</p>
+<div class="stats"><div class="stat"><div class="v">16</div><div class="l">Teachers coached</div></div><div class="stat"><div class="v">Grades 7–8</div><div class="l">Audience</div></div><div class="stat"><div class="v">School-wide</div><div class="l">Adoption</div></div></div>
+</div></header>
+<main><section class="sec"><div class="wrap"><p class="k">The problem</p><h2>Making distant injustice meaningful</h2><p class="lead">How do you help students in China understand human-rights issues that are historically and culturally distant, without flattening the material or overwhelming the kids? Four contexts anchored the unit, Darfur, the Holocaust, the Khmer Rouge, and U.S. segregation. Each was emotionally heavy and far from students' daily lives, so they needed scaffolding to reach genuine understanding rather than surface awareness.</p></div></section><section class="sec"><div class="wrap"><p class="k">Station-based design</p><h2>One topic, many ways in</h2><p class="lead">The curriculum ran on station-based learning, moving students through the material in different modes so each could find a way in.</p><div class="cards"><div class="card"><h4>Documentary station</h4><p>Short films and testimonies that put human faces to the history.</p></div><div class="card"><h4>Music and art station</h4><p>Songs, poetry, and artwork from affected communities to open up emotional response.</p></div><div class="card"><h4>Literature station</h4><p>First-person narratives and memoirs for intimate perspective.</p></div><div class="card"><h4>Connection station</h4><p>Activities linking each global issue to local experience and shared human values.</p></div></div></div></section><section class="sec"><div class="wrap"><p class="k">Building the bridge</p><h2>Universal values, specific contexts</h2><div class="note"><h4>Connection strategy</h4><p>The work was finding universal human experiences, family separation, loss of home, courage under threat, that cross cultural lines, while respecting the specific context of each history. Chinese ideas about justice, fairness, and community responsibility became entry points, drawn carefully so nothing got oversimplified.</p></div></div></section><section class="sec"><div class="wrap"><p class="k">Handling sensitive content</p><h2>Emotional safety, honest history</h2><div class="cards"><div class="card"><h4>Scaffolded exposure</h4><p>Start with universal themes, then move into specific historical detail.</p></div><div class="card"><h4>Choice in engagement</h4><p>Multiple ways to participate at a comfortable level while still meeting objectives.</p></div><div class="card"><h4>Hope and agency</h4><p>Balance hard history with resilience and resistance so students keep a sense of agency.</p></div><div class="card"><h4>Ongoing support</h4><p>Space to keep discussing and processing, since understanding develops over time.</p></div></div></div></section><section class="sec"><div class="wrap"><p class="k">Results</p><h2>Empathy that stuck</h2><div class="note"><h4>Outcome</h4><p>Students built real empathy, global awareness, and critical thinking about justice and responsibility. The framework was adopted across the school's humanities curriculum, and 16 teachers were coached to deliver it.</p></div>
+<p class="lead">It kept running after the initial rollout, which is the truest test of a curriculum, whether it survives without its original author in the room.</p></div></section><section class="sec"><div class="wrap"><p class="k">What made it work</p><h2>Lessons for cross-cultural teaching</h2><div class="lessons"><div class="lesson"><h4>Universal values connect</h4><p>Shared human experience bridges cultural and historical distance.</p></div><div class="lesson"><h4>Multiple modes matter</h4><p>Film, music, literature, and discussion let students engage different ways.</p></div><div class="lesson"><h4>Safety enables learning</h4><p>Emotional safety was the precondition for honest engagement.</p></div><div class="lesson"><h4>Cultural sensitivity is the job</h4><p>Respecting local context while teaching global issues takes care and balance.</p></div></div></div></section></main>
+<footer><div class="wrap"><h2>Developing culturally responsive curriculum?</h2><p>I design learning that handles hard topics with rigor and care.</p><div class="links"><a class="btn primary" href="mailto:gabf@pm.me">Email me</a><a class="btn ghost" href="https://linkedin.com/in/gabyfs">LinkedIn</a></div></div></footer>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('themebtn');var mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;function stored(){try{return localStorage.getItem('theme');}catch(e){return null;}}function save(v){try{localStorage.setItem('theme',v);}catch(e){}}btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);save(n);});if(mq){mq.addEventListener('change',function(e){if(!stored())root.setAttribute('data-theme',e.matches?'dark':'light');});}})();</script>
+</body></html>

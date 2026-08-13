@@ -1,532 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Professional Development Case Study - Gabriela Frias</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #4a4a4a;
-            background: linear-gradient(135deg, #fefcfa 0%, #f5f1ed 100%);
-            min-height: 100vh;
-            letter-spacing: 0.01em;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: #cc8963;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #a0522d;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, #cc8963, #a0522d);
-            color: white;
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-
-        .key-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .metric-card {
-            background: rgba(255,255,255,0.15);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .metric-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            display: block;
-        }
-
-        .metric-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .content-section {
-            background: white;
-            margin-bottom: 2rem;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .section-header {
-            background: #f8f6f3;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid #cc8963;
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #a0522d;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        .section-content {
-            padding: 2rem;
-        }
-
-        .challenge-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .challenge-card {
-            background: #fef2f2;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #ef4444;
-        }
-
-        .challenge-title {
-            font-weight: 600;
-            color: #dc2626;
-            margin-bottom: 0.5rem;
-        }
-
-        .method-highlight {
-            background: #f0f9ff;
-            border-left: 4px solid #0ea5e9;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .method-title {
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .workshop-flow {
-            display: grid;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .flow-step {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .step-icon {
-            background: #cc8963;
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-
-        .step-details h4 {
-            color: #a0522d;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .activity-card {
-            background: #fff7ed;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #f97316;
-        }
-
-        .activity-title {
-            font-weight: 600;
-            color: #ea580c;
-            margin-bottom: 0.5rem;
-        }
-
-        .outcome-highlight {
-            background: #f0fdf4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #16a34a;
-            margin: 1rem 0;
-        }
-
-        .before-after {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-
-        .before-card, .after-card {
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .before-card {
-            background: #fef2f2;
-            border-left: 4px solid #ef4444;
-        }
-
-        .after-card {
-            background: #f0fdf4;
-            border-left: 4px solid #16a34a;
-        }
-
-        .card-title {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .before-card .card-title {
-            color: #dc2626;
-        }
-
-        .after-card .card-title {
-            color: #16a34a;
-        }
-
-        .lesson-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .lesson-card {
-            background: #f0f9ff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #0ea5e9;
-        }
-
-        .lesson-title {
-            font-weight: 600;
-            color: #0369a1;
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .key-metrics {
-                grid-template-columns: 1fr;
-            }
-            
-            .before-after {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Education Professional Development — Gabriela Frias Sun</title>
+<meta name="description" content="An experiential PD program that turned 12 teachers with no technical background into confident cybersecurity and IT instructors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){var t=null;try{t=localStorage.getItem('theme');}catch(e){}if(!t){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
+<style>
+:root{--serif:'Fraunces',Georgia,serif;--sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;--acc-light:#512B46;--acc-dark:#CB8EBC;}
+:root,:root[data-theme="light"]{--bg:#F7F7F5;--surface:#FFFFFF;--ink:#1A1B1E;--muted:#6A6B6E;--rule:#E4E3DF;--faint:#F0EFEC;--accent:var(--acc-light);--tint:#F1E9EF;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141419;--surface:#1C1D23;--ink:#ECEBE8;--muted:#9C9DA2;--rule:#2C2D35;--faint:#1F2027;--accent:var(--acc-dark);--tint:#221A20;}}
+:root[data-theme="dark"]{--bg:#141419;--surface:#1C1D23;--ink:#ECEBE8;--muted:#9C9DA2;--rule:#2C2D35;--faint:#1F2027;--accent:var(--acc-dark);--tint:#221A20;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .4s ease,color .4s ease;}
+.wrap{max-width:900px;margin:0 auto;padding:0 32px;}
+.themebtn{position:fixed;top:22px;right:22px;z-index:60;width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--rule);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .2s,color .2s,background .4s;}
+.themebtn:hover{border-color:var(--accent);color:var(--accent);}
+.themebtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.themebtn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;}
+.themebtn .moon{display:block;}.themebtn .sun{display:none;}
+:root[data-theme="dark"] .themebtn .moon{display:none;}:root[data-theme="dark"] .themebtn .sun{display:block;}
+.backlink{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-decoration:none;margin-bottom:30px;}
+.backlink:hover{color:var(--accent);}
+.hero{padding:96px 0 60px;}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin:0 0 24px;}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,6.4vw,68px);line-height:1.03;letter-spacing:-.015em;margin:0 0 16px;}
+.hero .role{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(19px,2.6vw,24px);color:var(--muted);margin:0 0 30px;}
+.hero .thesis{font-size:20px;line-height:1.55;max-width:34ch;margin:0 0 40px;}
+.hero .thesis b{font-weight:600;}
+.standfirst{font-size:19px;line-height:1.55;color:var(--muted);max-width:56ch;margin:16px 0 34px;}
+.proof{display:inline-flex;align-items:baseline;gap:16px;padding:18px 24px;background:var(--tint);border-left:2px solid var(--accent);}
+.proof .shift{font-family:var(--mono);font-weight:500;font-size:clamp(22px,3.4vw,30px);color:var(--ink);white-space:nowrap;}
+.proof .shift .arrow,.stat .v .arrow,.outcome .shift .arrow{color:var(--accent);padding:0 6px;}
+.proof .plabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);max-width:16ch;line-height:1.45;}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px;}
+.stat{border:1px solid var(--rule);border-radius:9px;padding:14px 18px;min-width:118px;}
+.stat .v{font-family:var(--mono);font-weight:500;font-size:18px;color:var(--ink);white-space:nowrap;}
+.stat .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px;}
+.cases{padding:8px 0 40px;}
+.case{padding:54px 0;border-top:1px solid var(--rule);}
+.case-eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;}
+.case h2{font-family:var(--serif);font-weight:500;font-size:clamp(27px,4.2vw,38px);line-height:1.08;letter-spacing:-.01em;margin:0 0 18px;}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0 0 28px;display:flex;flex-wrap:wrap;}
+.meta span:not(:last-child)::after{content:"·";padding:0 10px;color:var(--rule);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;margin-bottom:28px;}
+.block h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 9px;font-weight:500;}
+.block p{margin:0;font-size:15.5px;line-height:1.62;}
+.outcome{grid-column:1 / -1;background:var(--faint);padding:22px 26px;border-left:2px solid var(--accent);}
+.outcome h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:500;}
+.outcome .shift{font-family:var(--mono);font-weight:500;font-size:22px;color:var(--ink);display:block;margin-bottom:8px;}
+.outcome p{margin:0;font-size:15.5px;line-height:1.62;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--rule);border-radius:999px;padding:5px 12px;}
+.caselink{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:var(--accent);text-decoration:none;}
+.caselink:hover{text-decoration:underline;}
+.sec{padding:46px 0;border-top:1px solid var(--rule);}
+.sec .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;}
+.sec h2{font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.6vw,32px);letter-spacing:-.01em;margin:0 0 18px;}
+.sec p{font-size:16px;line-height:1.65;max-width:64ch;}
+.note{background:var(--tint);border-left:2px solid var(--accent);padding:20px 24px;margin:22px 0;}
+.note h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;font-weight:500;}
+.note p{margin:0;font-size:15.5px;}
+.steps{list-style:none;counter-reset:s;padding:0;margin:22px 0 0;}
+.steps li{counter-increment:s;position:relative;padding:0 0 22px 48px;}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid var(--rule);border-radius:6px;width:30px;height:30px;display:grid;place-items:center;}
+.steps li h4{font-family:var(--sans);font-weight:600;font-size:16px;margin:3px 0 5px;}
+.steps li p{margin:0;font-size:15px;color:var(--muted);max-width:60ch;}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px;}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:20px 22px;}
+.card h4{font-family:var(--mono);font-size:12px;color:var(--accent);margin:0 0 8px;font-weight:500;}
+.card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--muted);}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px;}
+.col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;}
+.col ul{margin:0;padding-left:18px;}.col li{font-size:15px;line-height:1.5;margin-bottom:8px;}
+.quote{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;border-left:2px solid var(--accent);padding:4px 0 4px 22px;margin:26px 0;}
+.quote cite{display:block;font-family:var(--mono);font-style:normal;font-size:12px;letter-spacing:.05em;color:var(--muted);margin-top:12px;}
+.lessons{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px;margin-top:22px;}
+.lesson h4{font-family:var(--serif);font-weight:500;font-size:18px;margin:0 0 6px;}
+.lesson p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6;}
+footer{border-top:1px solid var(--rule);padding:70px 0 90px;}
+footer h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,4vw,36px);letter-spacing:-.01em;margin:0 0 16px;max-width:24ch;}
+footer p{color:var(--muted);max-width:46ch;margin:0 0 30px;}
+.links{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-decoration:none;padding:12px 22px;border-radius:6px;transition:all .18s;}
+.btn.primary{background:var(--accent);color:#fff;}
+:root[data-theme="dark"] .btn.primary{color:#141419;}
+.btn.ghost{border:1px solid var(--rule);color:var(--ink);}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.btn.primary:hover{opacity:.9;}.btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+@media(max-width:640px){.wrap{padding:0 22px;}.grid,.cards,.cols,.lessons{grid-template-columns:1fr;gap:20px;}.hero{padding:70px 0 48px;}.themebtn{top:16px;right:16px;}}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+.hero,.case,.sec{animation:fadeup .6s ease both;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto;}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← Back to Portfolio</a>
-        
-        <div class="hero-section">
-            <h1 class="hero-title">Teacher Professional Development</h1>
-            <p class="hero-subtitle">Building Educator Confidence in Cybersecurity, IT, and Networking Instruction Through Industry Partnerships</p>
-            
-            <div class="key-metrics">
-                <div class="metric-card">
-                    <span class="metric-number">12</span>
-                    <span class="metric-label">Teachers Trained</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">30+</span>
-                    <span class="metric-label">Lesson Plans Created</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-number">2-3 Weeks</span>
-                    <span class="metric-label">Program Duration</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">The Challenge</h2>
-                <p class="section-subtitle">Bridging the gap between theory and confident practice</p>
-            </div>
-            <div class="section-content">
-                <p>High school teachers with no technical background needed to confidently teach cybersecurity, IT support, and computer networking concepts to their students. Traditional professional development often fails to bridge the theory-to-practice gap, leaving educators feeling unprepared for real classroom implementation of technical curricula.</p>
-                
-                <div class="challenge-grid">
-                    <div class="challenge-card">
-                        <div class="challenge-title">No Technical Background</div>
-                        <p>Teachers had no prior experience with cybersecurity principles, IT support procedures, or networking fundamentals.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="challenge-title">Complex Technical Concepts</div>
-                        <p>Educators felt overwhelmed by the depth of technical knowledge needed to teach cybersecurity, IT, and networking effectively.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="challenge-title">Real-World Application</div>
-                        <p>Teachers needed to understand how these technical concepts apply in actual workplace environments and career contexts.</p>
-                    </div>
-                    <div class="challenge-card">
-                        <div class="challenge-title">Underserved Communities</div>
-                        <p>Schools serving underrepresented communities needed sustainable, high-quality computer science education access.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">The "Experience First" Method</h2>
-                <p class="section-subtitle">Learning by doing, then understanding why</p>
-            </div>
-            <div class="section-content">
-                <div class="method-highlight">
-                    <div class="method-title">🎯 Core Innovation: Industry Partnership Learning</div>
-                    <p>Teachers experienced technical concepts through real-world applications via partnerships with Google, Federal Reserve Bank of NY, and other industry organizations, then learned to adapt these experiences for classroom instruction.</p>
-                </div>
-
-                <div class="workshop-flow">
-                    <div class="flow-step">
-                        <div class="step-icon">1</div>
-                        <div class="step-details">
-                            <h4>Industry Exposure</h4>
-                            <p>Teachers visited and learned from industry partners like Google and Federal Reserve Bank of NY to understand real-world applications of technical concepts.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flow-step">
-                        <div class="step-icon">2</div>
-                        <div class="step-details">
-                            <h4>Hands-On Learning</h4>
-                            <p>Participants worked through cybersecurity scenarios, IT troubleshooting exercises, and networking labs to build foundational technical knowledge.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flow-step">
-                        <div class="step-icon">3</div>
-                        <div class="step-details">
-                            <h4>Curriculum Adaptation</h4>
-                            <p>Teachers learned to translate industry experiences into age-appropriate lessons and activities for high school students.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flow-step">
-                        <div class="step-icon">4</div>
-                        <div class="step-details">
-                            <h4>Classroom Implementation</h4>
-                            <p>Educators practiced facilitating technical lessons with peer feedback, building confidence before implementing with their students.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Workshop Activities</h2>
-                <p class="section-subtitle">Hands-on experiences that built confidence and competence</p>
-            </div>
-            <div class="section-content">
-                <p>Each workshop session combined industry exposure with systematic curriculum design principles to ensure teachers could effectively translate real-world technical applications into engaging classroom experiences.</p>
-
-                <div class="activity-grid">
-                    <div class="activity-card">
-                        <div class="activity-title">Industry Site Visits</div>
-                        <p>Teachers experienced cybersecurity, IT, and networking in action through partnerships with Google, Federal Reserve Bank of NY, and other organizations.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Technical Skill Building</div>
-                        <p>Hands-on labs in network configuration, cybersecurity protocols, and IT troubleshooting to build foundational knowledge.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Curriculum Development</div>
-                        <p>Collaborative work to create lesson plans that connected industry experiences to classroom learning objectives.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Career Pathway Mapping</div>
-                        <p>Understanding how technical skills translate to career opportunities for students in underserved communities.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Transformation Results</h2>
-                <p class="section-subtitle">From hesitant to confident in one week</p>
-            </div>
-            <div class="section-content">
-                <div class="outcome-highlight">
-                    <p><strong>Program Results:</strong> Over 2-3 weeks, teachers with no technical background developed the confidence and knowledge to effectively teach cybersecurity, IT, and networking concepts to high school students.</p>
-                </div>
-
-                <div class="before-after">
-                    <div class="before-card">
-                        <div class="card-title">📉 Before Training</div>
-                        <ul>
-                            <li>Hesitant about learning technical content</li>
-                            <li>Unclear about real-world applications</li>
-                            <li>Uncertain how to explain complex technical concepts</li>
-                            <li>Limited understanding of career pathways in tech</li>
-                            <li>Concerned about keeping students engaged with technical material</li>
-                        </ul>
-                    </div>
-                    <div class="after-card">
-                        <div class="card-title">📈 After Training</div>
-                        <ul>
-                            <li>Confidently teaching cybersecurity fundamentals</li>
-                            <li>Connecting technical concepts to real career opportunities</li>
-                            <li>Skilled at making complex networking concepts accessible</li>
-                            <li>Effective at engaging students with industry connections</li>
-                            <li>Able to adapt technical content for diverse learners</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <p style="margin-top: 1.5rem;"><strong>Program Impact:</strong> Created a replicable professional development model that leveraged industry partnerships to provide quality technical education in underserved communities without requiring specialized technical expertise from school staff.</p>
-                
-                <p><strong>Curriculum Output:</strong> Developed 30+ comprehensive lesson plans in cybersecurity, IT support, and networking that teachers could implement with confidence, including real-world application examples and career pathway connections.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Addressing Teacher Concerns</h2>
-                <p class="section-subtitle">Strategic solutions for common professional development challenges</p>
-            </div>
-            <div class="section-content">
-                <p>The biggest challenge was helping teachers overcome their initial hesitation about the amount of new information they needed to learn, especially in unfamiliar technical territory.</p>
-
-                <div class="method-highlight">
-                    <div class="method-title">🔑 Solution: Gradual Confidence Building</div>
-                    <p>Instead of overwhelming teachers with everything at once, we built complexity gradually. Each success created confidence for the next challenge, and the peer support system ensured no one felt isolated in their learning.</p>
-                </div>
-
-                <div class="activity-grid">
-                    <div class="activity-card">
-                        <div class="activity-title">Start Simple</div>
-                        <p>Began with basic concepts and gradually introduced complexity as teachers built foundational confidence.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Peer Support</div>
-                        <p>Created learning partnerships so teachers could support each other through challenges and celebrate successes together.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Safe Practice Space</div>
-                        <p>Provided low-stakes opportunities to practice new skills before implementing them with students.</p>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-title">Just-in-Time Learning</div>
-                        <p>Focused on immediately applicable skills rather than theoretical knowledge, building competence through practical success.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <div class="section-header">
-                <h2 class="section-title">Lessons Learned</h2>
-                <p class="section-subtitle">Insights for scaling effective adult learning programs</p>
-            </div>
-            <div class="section-content">
-                <div class="lesson-grid">
-                    <div class="lesson-card">
-                        <div class="lesson-title">Experience Before Theory</div>
-                        <p>Adults learn technical skills more effectively when they experience success before understanding all the underlying concepts.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Confidence Is Contagious</div>
-                        <p>When teachers feel confident, they naturally become more effective facilitators, creating positive learning environments for students.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Peer Learning Works</div>
-                        <p>Teachers learning alongside colleagues created a support network that extended beyond the workshop week.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Scaffolding Is Everything</div>
-                        <p>Gradual complexity building prevents overwhelm and creates sustainable skill development in technical subjects.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Context Matters</div>
-                        <p>Allowing teachers to adapt content for their specific student populations increased buy-in and implementation success.</p>
-                    </div>
-                    <div class="lesson-card">
-                        <div class="lesson-title">Practice Makes Permanent</div>
-                        <p>Immediate application opportunities within the workshop were crucial for building lasting confidence and competence.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #cc8963, #a0522d); border-radius: 12px;">
-            <p style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">Interested in developing effective adult learning programs through experiential design?</p>
-            <a href="mailto:gabf@pm.me" style="display: inline-block; background: white; color: #a0522d; padding: 0.75rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Let's Connect</a>
-        </div>
-    </div>
-</body>
-</html>
+<button class="themebtn" id="themebtn" aria-label="Switch color theme">
+<svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+<svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+</button>
+<div class="wrap"><a class="backlink" href="index.html">&larr; Back to portfolio</a></div>
+<header class="hero"><div class="wrap">
+<p class="eyebrow">Professional Development</p>
+<h1>Technical Education Professional Development</h1>
+<p class="standfirst">An experiential program that turned teachers with no technical background into confident cybersecurity, IT, and networking instructors.</p>
+<div class="stats"><div class="stat"><div class="v">12</div><div class="l">Educators trained</div></div><div class="stat"><div class="v">30+</div><div class="l">Lesson plans built</div></div><div class="stat"><div class="v">one month</div><div class="l">Duration</div></div></div>
+</div></header>
+<main><section class="sec"><div class="wrap"><p class="k">The problem</p><h2>Theory that did not survive the classroom</h2><p class="lead">High-school teachers with no technical background needed to teach cybersecurity, IT support, and networking, and teach it well. Most professional development hands teachers theory and hopes it holds up in front of students. These educators needed to feel the concepts in a real setting first, understand how the skills map to careers, and reach students in underserved communities while doing it.</p></div></section><section class="sec"><div class="wrap"><p class="k">The method</p><h2>Experience first, theory second</h2><div class="note"><h4>Core move: industry-partnership learning</h4><p>Through partnerships with Google, the Federal Reserve Bank of NY, and other organizations, teachers experienced the technical concepts in real workplace settings, then learned to adapt what they had seen for their own classrooms.</p></div><ol class="steps"><li><h4>Industry exposure</h4><p>Teachers learned from partners like Google and the Federal Reserve Bank of NY to see how the concepts show up in real work.</p></li><li><h4>Hands-on practice</h4><p>Participants worked through cybersecurity scenarios, IT troubleshooting, and networking labs to build the fundamentals.</p></li><li><h4>Curriculum adaptation</h4><p>Teachers translated those experiences into age-appropriate lessons for high schoolers.</p></li><li><h4>Classroom rehearsal</h4><p>Educators practiced facilitating with peer feedback, building confidence before teaching students.</p></li></ol></div></section><section class="sec"><div class="wrap"><p class="k">The shift</p><h2>Where teachers started, and finished</h2><div class="cols">
+<div class="col"><h4>Before</h4><ul><li>Hesitant about technical content</li><li>Unclear on real-world application</li><li>Unsure how to explain complex ideas</li><li>Limited sense of tech career paths</li><li>Worried about keeping students engaged</li></ul></div>
+<div class="col"><h4>After</h4><ul><li>Teaching cybersecurity fundamentals with confidence</li><li>Connecting concepts to real careers</li><li>Making networking accessible</li><li>Engaging students through industry links</li><li>Adapting content for diverse learners</li></ul></div>
+</div></div></section><section class="sec"><div class="wrap"><p class="k">Results</p><h2>A replicable model</h2><div class="note"><h4>Outcome</h4><p>Over one month, 12 teachers with no technical background built the confidence and knowledge to teach the material well, and left with 30+ lesson plans in cybersecurity, IT, and networking they could actually use.</p></div>
+<p class="lead">The model is replicable. It brings quality technical education to underserved schools without requiring specialized technical staff, by building teacher capacity instead.</p></div></section><section class="sec"><div class="wrap"><p class="k">What made it work</p><h2>Lessons for adult learning</h2><div class="lessons"><div class="lesson"><h4>Experience before theory</h4><p>Adults learn technical skills faster when they succeed first and understand the mechanics after.</p></div><div class="lesson"><h4>Confidence is contagious</h4><p>Confident teachers become better facilitators, which changes the room for students.</p></div><div class="lesson"><h4>Peer learning works</h4><p>Learning alongside colleagues created support that outlasted the workshop.</p></div><div class="lesson"><h4>Scaffolding prevents overwhelm</h4><p>Gradual complexity built durable skill instead of short-term cramming.</p></div></div></div></section></main>
+<footer><div class="wrap"><h2>Building effective adult learning programs?</h2><p>I design PD that changes what people can do, not just what they know.</p><div class="links"><a class="btn primary" href="mailto:gabf@pm.me">Email me</a><a class="btn ghost" href="https://linkedin.com/in/gabyfs">LinkedIn</a></div></div></footer>
+<script>(function(){var root=document.documentElement,btn=document.getElementById('themebtn');var mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;function stored(){try{return localStorage.getItem('theme');}catch(e){return null;}}function save(v){try{localStorage.setItem('theme',v);}catch(e){}}btn.addEventListener('click',function(){var n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);save(n);});if(mq){mq.addEventListener('change',function(e){if(!stored())root.setAttribute('data-theme',e.matches?'dark':'light');});}})();</script>
+</body></html>
