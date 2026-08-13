@@ -1,49 +1,44 @@
-# Gabriela Frias - Learning Experience Design Portfolio
+# Gabriela Frias Sun — Learning Experience Design Portfolio
 
-Welcome to my portfolio! This site showcases my work as a Curriculum and Learning Experience Designer, featuring projects that demonstrate my passion for creating educational content that drives real behavior change.
+Welcome. This site presents my work as a Curriculum and Learning Experience Designer, with projects that show how I build educational content that drives real behavior change.
 
-## About This Portfolio
+## About this portfolio
 
-This portfolio highlights four key projects that represent my expertise in:
-- **Adult learning and behavior change** (Corporate cybersecurity training)
-- **Innovative curriculum design** (AI literacy for elementary students)
-- **Professional development** (Teacher training programs)
-- **Cross-cultural education** (Global human rights curriculum)
+Four projects, spanning:
 
-## Featured Projects
+- Adult learning and behavior change (corporate cybersecurity training)
+- Curriculum design (AI literacy for elementary students)
+- Professional development (teacher training)
+- Cross-cultural education (global human rights curriculum)
 
-### Corporate Security Awareness Training
-Interactive eLearning that reduced client phish-prone behavior by 92% (from 40.8% to 3.4%)
+## Featured projects
 
-### AI Literacy Curriculum
-Elementary education program reaching 100,000+ students through Girls Who Code
+**Corporate Security Awareness Training** — Scenario-based eLearning that reduced one client's phish-prone rate from 40.8% to 3.4% over six months.
 
-### Teacher Professional Development
-Hands-on workshops that transformed 12 educators into confident computer science instructors
+**AI Literacy Curriculum** — Elementary program reaching 10,000+ learners worldwide through Girls Who Code.
 
-### Global Human Rights Education
-Cross-cultural curriculum covering Darfur refugees, Holocaust victims, Khmer Rouge, and U.S. segregation
+**Teacher Professional Development** — A month-long, hands-on program that turned 12 educators with no technical background into confident cybersecurity, IT, and networking instructors.
 
-## Technologies Used
+**Global Human Rights Education** — Cross-cultural ELA curriculum covering Darfur, the Holocaust, the Khmer Rouge, and U.S. segregation.
 
-- **Design**: HTML5, CSS3, Responsive Design
-- **Typography**: SF Pro Rounded (system fonts)
-- **Color Palette**: Warm Terracotta (accessible WCAG AA compliant)
-- **Hosting**: GitHub Pages
+## Built with
 
-## Live Site
+- HTML and CSS, responsive, with light and dark themes that follow the visitor's system setting and a manual toggle
+- Typography: Fraunces, IBM Plex Sans, and IBM Plex Mono
+- Accent: deep aubergine, tuned for readability in both themes
+- Hosting: GitHub Pages
 
-🔗 **[View Portfolio](https://iamgabyfrias.github.io/portfolio)**
+## Live site
 
-## About Me
+[View the portfolio](https://iamgabyfrias.github.io/portfolio/)
 
-I'm a Curriculum and Learning Designer based in NYC who believes education should be engaging, accessible, and transformative. With experience spanning NYC and international schools, cybersecurity training, and curriculum development at Girls Who Code, I specialize in making complex concepts accessible to diverse audiences.
+## About me
+
+I'm a Curriculum and Learning Experience Designer based in New York City. My work spans NYC and international classrooms, cybersecurity awareness training, and curriculum development at Girls Who Code, and it centers on making complex, technical ideas clear for the people who need them.
 
 ## Contact
 
-- 📧 **Email**: gabf@pm.me
-- 📍 **Location**: New York City, NY
+- Email: gabf@pm.me
+- Location: New York City, NY
 
----
-
-*This portfolio was designed with accessibility, user experience, and authentic storytelling in mind. All content reflects real projects and measurable impact from my professional experience.*
+All content reflects real projects and measurable outcomes from my professional experience.
